@@ -9,32 +9,32 @@ import { configsDescription } from './resources/configs';
 import { phoneNumbersDescription } from './resources/phone-numbers';
 
 export class IdealPostcodes implements INodeType {
-	description: INodeTypeDescription = {
-		displayName: 'Ideal Postcodes',
-		name: 'N8nDevIdealPostcodes',
-		icon: { light: 'file:./ideal-postcodes.svg', dark: 'file:./ideal-postcodes.dark.svg' },
-		group: ['input'],
-		version: 1,
-		subtitle: '={{\$parameter["operation"] + ": " + \$parameter["resource"]}}',
-		description: 'Getting Started',
-		defaults: { name: 'Ideal Postcodes' },
-		usableAsTool: true,
-		inputs: [NodeConnectionTypes.Main],
-		outputs: [NodeConnectionTypes.Main],
-		credentials: [
-			{
-				name: 'N8nDevIdealPostcodesApi',
-				required: true,
-			},
-		],
-		requestDefaults: {
-			baseURL: '={{\$credentials.url}}',
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json',
-			},
-		},
-		properties: [
+        description: INodeTypeDescription = {
+                displayName: 'Ideal Postcodes',
+                name: 'N8nDevIdealPostcodes',
+                icon: { light: 'file:./ideal-postcodes.svg', dark: 'file:./ideal-postcodes.dark.svg' },
+                group: ['input'],
+                version: 1,
+                subtitle: '={{\$parameter["operation"] + ": " + \$parameter["resource"]}}',
+                description: 'Getting Started',
+                defaults: { name: 'Ideal Postcodes' },
+                usableAsTool: true,
+                inputs: [NodeConnectionTypes.Main],
+                outputs: [NodeConnectionTypes.Main],
+                credentials: [
+                        {
+                                name: 'N8nDevIdealPostcodesApi',
+                                required: true,
+                        },
+                ],
+                requestDefaults: {
+                        baseURL: '={{\$credentials.url}}',
+                        headers: {
+                                Accept: 'application/json',
+                                'Content-Type': 'application/json',
+                        },
+                },
+                properties: [
 		{
 			"displayName": "Resource",
 			"name": "resource",
@@ -92,6 +92,6 @@ export class IdealPostcodes implements INodeType {
 		...licenseesDescription,
 		...configsDescription,
 		...phoneNumbersDescription
-		],
-	};
+                ],
+        };
 }
